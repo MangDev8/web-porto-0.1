@@ -1,3 +1,4 @@
+/* Global */
 * {
     margin: 0;
     padding: 0;
@@ -11,17 +12,19 @@ body {
     text-align: center;
 }
 
+/* Navbar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 15px 5%;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 1000;
 }
 
 nav .logo {
@@ -33,10 +36,7 @@ nav .logo {
 nav ul {
     list-style: none;
     display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
+    gap: 20px;
 }
 
 nav ul li a {
@@ -49,6 +49,7 @@ nav ul li a:hover {
     color: #ffcc00;
 }
 
+/* Hero Section */
 #hero {
     height: 100vh;
     display: flex;
@@ -56,12 +57,14 @@ nav ul li a:hover {
     justify-content: center;
     background: url('g1.jpg') no-repeat center;
     background-size: cover;
+    padding: 20px;
 }
 
 .hero-content {
     background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
+    max-width: 90%;
 }
 
 .hero-content h1 {
@@ -87,22 +90,83 @@ nav ul li a:hover {
     background: #e6b800;
 }
 
+/* Tentang Saya, Proyek, dan Kontak */
 #about, #projects, #contact {
-    padding: 50px 20px;
+    padding: 50px 5%;
 }
 
-about, h2 {
-   color: tomato;
+#about h2, #projects h2, #contact h2 {
+    color: tomato;
 }
 
-.project-list {
+/* Skill Icons */
+.skills-icons {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
+    margin-top: 20px;
 }
 
-.project, h2 {
-    padding: 20px;
+.skill-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    width: 100px;
+    transition: 0.3s;
+}
+
+.skill-icon i {
+    font-size: 40px;
+    color: #ffcc00;
+}
+
+.skill-icon p {
+    margin-top: 10px;
+}
+
+.skill-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Skill Progress */
+.skills {
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+}
+
+.skill {
+    margin: 15px 0;
+}
+
+.skill p {
+    margin: 5px 0;
+}
+
+.progress {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #ffcc00;
+}
+
+/* Proyek */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .project-card {
@@ -116,99 +180,86 @@ about, h2 {
     transform: scale(1.05);
 }
 
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+}
+
 .social-icons a {
     color: white;
     font-size: 24px;
     margin: 0 10px;
+    transition: 0.3s;
 }
 
+.social-icons a:hover {
+    color: #ffcc00;
+}
+
+/* Footer */
 footer {
     padding: 20px;
     background: #111;
 }
 
-
-
-
-.skills-icons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-top: 20px;
+/* Bagian Lain */
+.lain {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+    color: tomato;
 }
 
-.skill-icon {
-        display: flex;
+.skill-01 p {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+}
+
+/* Media Query untuk Responsivitas */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    nav ul {
         flex-direction: column;
-        align-items: center;
-        padding: 15px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        width: 100px;
-        transition: 0.3s;
-}
-
-.skill-icon i {
-        font-size: 40px;
-        color: #ffcc00;
-}
-
-.skill-icon p {
-        margin-top: 10px;
-}
-
-.skill-icon:hover {
-        transform: scale(1.1);
-}
-
-
-
-
-.skills {
-        width: 80%;
-        margin: auto;
-        text-align: left;
-}
-
-.skill {
-        margin: 15px 0;
-}
-
-.skill p {
-        margin: 5px 0;
-}
-
-.progress {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.8);
         width: 100%;
-        height: 8px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 5px;
-        overflow: hidden;
-}
+        display: none;
+    }
 
-.progress-bar {
-        height: 100%;
-        background: #ffcc00;
-}
-
-
-
-
-.lain  {
-        width: 80%;
-        margin: auto;
+    nav ul li {
         text-align: center;
-        padding: 30px;
-        color: tomato;
-}
-
-
-
-.skill-01 p{
-        width: 80%;
-        margin: auto;
-        text-align: auto;
         padding: 10px;
-}
+    }
 
+    nav ul li a {
+        display: block;
+    }
+
+    #hero {
+        padding: 50px 10%;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .skills-icons {
+        justify-content: center;
+    }
+
+    .skills {
+        width: 90%;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+}
