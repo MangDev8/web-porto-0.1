@@ -24,3 +24,4 @@ document.addEventListener("DOMContentLoaded", function() {
                 hamburger.classList.toggle("active");
         });
 });
+
