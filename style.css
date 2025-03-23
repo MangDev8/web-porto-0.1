@@ -73,7 +73,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('g1.jpg') no-repeat center;
+    background: url('me.jpg') no-repeat center;
     background-size: cover;
     padding: 20px;
 }
