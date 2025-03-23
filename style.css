@@ -10,6 +10,7 @@ body {
     background: #0d0d0d;
     color: #fff;
     text-align: center;
+    overflow-x: hidden;
 }
 
 /* Navbar */
@@ -25,14 +26,16 @@ nav {
     top: 0;
     left: 0;
     z-index: 1000;
+    transition: 0.3s ease-in-out;
 }
 
 nav .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #258;
+    color: #ffcc00;
 }
 
+/* Menu Links */
 nav ul {
     list-style: none;
     display: flex;
@@ -47,6 +50,21 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #ffcc00;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: 0.3s;
 }
 
 /* Hero Section */
@@ -203,7 +221,7 @@ footer {
 }
 
 /* Bagian Lain */
-.lain {
+.lain-03 {
     width: 80%;
     margin: auto;
     text-align: center;
@@ -211,36 +229,37 @@ footer {
     color: tomato;
 }
 
-.skill-01 p {
+.skills-lain p {
     width: 80%;
     margin: auto;
     padding: 10px;
 }
 
-/* Media Query untuk Responsivitas */
+/* Responsiveness */
 @media (max-width: 768px) {
-    nav {
-        padding: 15px 20px;
+    .hamburger {
+        display: flex;
     }
 
     nav ul {
-        flex-direction: column;
         position: absolute;
         top: 60px;
         left: 0;
-        background: rgba(0, 0, 0, 0.8);
         width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
         display: none;
+        transition: 0.3s ease-in-out;
     }
 
-    nav ul li {
-        text-align: center;
-        padding: 10px;
+    nav ul.active {
+        display: flex;
     }
 
-    nav ul li a {
-        display: block;
-    }
+    
 
     #hero {
         padding: 50px 10%;
